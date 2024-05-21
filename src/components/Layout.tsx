@@ -3,9 +3,10 @@ import Navbar from './Navbar';
 import Home from './Home';
 import About from './About';
 import Courses from './Courses';  
-import Contact from './Contact';
+// import Contact from './Contact';
 import Reviews from './Reviews';
 import Achievements from './Achievements';
+import Footer from './Footer';
 
 const Layout: React.FC = () => {
   return (
@@ -27,7 +28,7 @@ const Layout: React.FC = () => {
         </div>
         
         <div className="py-10"> {/* Add padding-y between components */}
-          <Contact />
+          <Footer />
         </div>
       </main>
     </div>
