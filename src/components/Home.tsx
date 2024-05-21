@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home: React.FC = () => {
   return (
-    <header id="home" className="w-full bg-white-100 p-2 relative text-left">
+    <header id="home" className="w-full bg-white-100 p-20 relative text-left">
       <div>
         <h1 className="text-4xl font-bold mb-6">
           <span className="bg-gradient-to-r from-red-500 via-green-500 to-gray-600 bg-clip-text text-transparent">
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           </h3>
         </div>
 
-        <p className="mt-10">
+        <p className="mt-10 px-20">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. <br />
           Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. <br />
           Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <br />
