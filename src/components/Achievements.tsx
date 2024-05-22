@@ -12,29 +12,42 @@ const Achievements: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="flex justify-center items-center h-[250px] border border-red-700">
-      <div className="flex space-x-4">
-        {achievements.map((achievement, index) => (
-          <div
-            key={index}
-            className="relative"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <img
-              src={achievement.image}
-              alt={`Achievement ${index + 1}`}
-              className={`w-32 h-32 cursor-pointer transition-transform duration-300 ${
-                hoveredIndex === index ? 'transform scale-150' : ''
-              }`}
-            />
-            {hoveredIndex === index && (
-              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-75 text-white text-center p-2">
-                <p>{achievement.text}</p>
-              </div>
-            )}
-          </div>
-        ))}
+    <div className="flex flex-col justify-center items-center">
+      <h2 className="text-2xl font-bold mb-4">Our Achievements</h2>
+      <div className="relative flex justify-center items-center h-[250px]">
+        <div className="flex space-x-4">
+          {achievements.map((achievement, index) => (
+            <div
+              key={index}
+              className="relative"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {hoveredIndex !== null && (
+                <>
+                  {hoveredIndex - 1 === index && (
+                    <div className="absolute top-20 left-0 w-32 h-32 bg-cyan-500 opacity-60"></div>
+                  )}
+                  {hoveredIndex + 1 === index && (
+                    <div className="absolute -top-20 left-0 w-32 h-32 bg-pink-500 opacity-60"></div>
+                  )}
+                </>
+              )}
+              <img
+                src={achievement.image}
+                alt={`Achievement ${index + 1}`}
+                className={`w-32 h-32 cursor-pointer transition-transform duration-300 ${
+                  hoveredIndex === index ? 'transform scale-150 z-10' : ''
+                }`}
+              />
+              {hoveredIndex === index && (
+                <div className="absolute top-[140px] left-1/2 transform -translate-x-1/2 mt-2 text-center">
+                  <p>{achievement.text}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -42,45 +55,3 @@ const Achievements: React.FC = () => {
 
 export default Achievements;
 
-
-// import React, { useState } from 'react';
-
-// const Achievements: React.FC = () => {
-//   const achievements = [
-//     { image: 'https://via.placeholder.com/150', text: 'Achievement 1' },
-//     { image: 'https://via.placeholder.com/150', text: 'Achievement 2' },
-//     { image: 'https://via.placeholder.com/150', text: 'Achievement 3' },
-//     { image: 'https://via.placeholder.com/150', text: 'Achievement 4' },
-//     { image: 'https://via.placeholder.com/150', text: 'Achievement 5' },
-//   ];
-
-//   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-//   return (
-//     <div className="flex justify-center items-center h-[300px] border border-red-700">
-//       <div className="flex space-x-4">
-//         {achievements.map((achievement, index) => (
-//           <div
-//             key={index}
-//             className="relative"
-//             onMouseEnter={() => setHoveredIndex(index)}
-//             onMouseLeave={() => setHoveredIndex(null)}
-//           >
-//             <img
-//               src={achievement.image}
-//               alt={`Achievement ${index + 1}`}
-//               className="w-32 h-32 cursor-pointer"
-//             />
-//             {hoveredIndex === index && (
-//               <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-75 text-white opacity-0 transition-opacity duration-300 hover:opacity-100">
-//                 <p className="text-center">{achievement.text}</p>
-//               </div>
-//             )}
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Achievements;
